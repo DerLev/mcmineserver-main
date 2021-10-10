@@ -13,9 +13,9 @@ import { MailIcon, ShieldCheckIcon, DocumentIcon } from '@heroicons/react/outlin
 import Head from 'next/head'
 
 const NavLinks = [
-  { title: 'Minecraft', href: '/' },
-  { title: 'Discord', href: '/' },
-  { title: 'Status', href: '/' },
+  { title: 'Minecraft', href: '/minecraft' },
+  { title: 'Discord', href: '/discord' },
+  { title: 'Status', href: '/status' },
 ]
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -70,7 +70,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <MailIcon className="w-4 h-4" />
                 <span>Kontakt</span>
               </a>
-              <Link href="/">
+              <Link href="/privacy">
                 <a className="flex justify-center items-center gap-1 hover:text-black dark:hover:text-white transition">
                   <ShieldCheckIcon className="h-4 w-4" />
                   <span>Datenschutz</span>
