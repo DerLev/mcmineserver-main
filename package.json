@@ -9,6 +9,7 @@
     "lint": "node ./scripts/detectStagingEnv.js && node ./scripts/createSitemap.js && next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.4",
     "cup-readdir": "^1.0.3",
     "next": "11.1.2",
     "next-seo": "^4.28.1",
