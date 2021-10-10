@@ -10,11 +10,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo dangerouslySetAllPagesToNoIndex={ENV.stagingEnv} dangerouslySetAllPagesToNoFollow={ENV.stagingEnv} {...SEO} />
-      {
-        ENV.stagingEnv &&
-        <StagingNote />
-      }
-      <Component {...pageProps} />
+      <div className="flex flex-col items-stretch min-h-screen">
+        {
+          ENV.stagingEnv &&
+          <StagingNote />
+        }
+        <main className="flex-grow">
+          <Component {...pageProps} />
+        </main>
+      </div>
     </>
   )
 }
