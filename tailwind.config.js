@@ -6,8 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gray: colors.gray
-      }
+        gray: colors.gray,
+        primary: '#526488',
+        secondary: '#374a72',
+      },
+      fontFamily: {
+        display: ['Karla', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif'],
+      },
     },
   },
   variants: {

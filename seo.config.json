@@ -9,9 +9,9 @@
     "site_name": "McMineserver",
     "images": [
       {
-        "url": "https://cdn.sanity.io/images/2m1s85es/production/bb594506ff0b16f7b149a573e4b360b4f0a8a6d0-1440x1080.webp?w=1920&h=1440",
+        "url": "https://api.mc-mineserver.de/v3/files/dcec9e77fe7faa4eaf23f079419d2282.webp",
         "width": 1920,
-        "height": 1440,
+        "height": 1080,
         "alt": "Snowy Mountains"
       }
     ]
