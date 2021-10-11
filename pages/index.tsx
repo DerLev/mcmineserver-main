@@ -61,7 +61,7 @@ const Home: NextPage = () => {
                 className="w-full h-52 flex items-center justify-center group rounded-xl bg-gradient-to-tr from-discord to-indigo-300 shadow-lg"
                 onClick={(e) => clickFeature(e, '/discord')}
               >
-                <FontAwesomeIcon icon={faDiscord} className="h-24 w-24 transform group-hover:scale-125 transition" />
+                <FontAwesomeIcon icon={faDiscord} className="h-24 w-24 text-7xl transform group-hover:scale-125 transition" />
               </button>
             </div>
           </div>
