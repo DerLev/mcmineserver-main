@@ -9,6 +9,7 @@ module.exports = {
         gray: colors.gray,
         primary: '#526488',
         secondary: '#374a72',
+        discord: '#5966f3',
       },
       fontFamily: {
         display: ['Karla', 'sans-serif'],
@@ -17,7 +18,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      scale: ['group-hover'],
+    },
   },
   plugins: [],
 }

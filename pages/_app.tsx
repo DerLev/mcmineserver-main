@@ -11,6 +11,7 @@ import Link from 'next/link'
 import moment from 'moment'
 import { MailIcon, ShieldCheckIcon, DocumentIcon } from '@heroicons/react/outline'
 import Head from 'next/head'
+import CookieConsent from '../components/CookieConsent'
 
 const NavLinks = [
   { title: 'Minecraft', href: '/minecraft' },
@@ -41,6 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo dangerouslySetAllPagesToNoIndex={ENV.stagingEnv} dangerouslySetAllPagesToNoFollow={ENV.stagingEnv} {...SEO} />
       <div className="flex flex-col items-stretch min-h-screen">
+        <CookieConsent />
         {
           ENV.stagingEnv &&
           <StagingNote />
@@ -73,7 +75,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           </div>
         </main>
-        <footer className="flex-grow-0 flex justify-center items-center bg-gray-200 dark:bg-gray-800 text-gray-400 bg-opacity-50 font-display">
+        <footer className="flex-grow-0 flex justify-center items-center bg-gray-200 dark:bg-gray-800 text-gray-400 bg-opacity-50 font-display px-2">
           <div className="flex max-w-7xl w-full sm:justify-between items-center flex-col sm:flex-row">
             <div>
               <span>&copy; { moment().format('yyyy') } McMineserver</span>
