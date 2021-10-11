@@ -12,7 +12,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className="fg-text z-10 flex justify-center items-center">
-          <h1 className="text-4xl font-semibold">Home</h1>
+          <h1 className="text-4xl font-semibold text-white">Home</h1>
         </div>
       </div>
       <div>

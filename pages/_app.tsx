@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <div className="flex gap-2">
               {
                 NavLinks.map((link, i) => (
-                  <Link href={link.href}>
+                  <Link href={link.href} key={i}>
                     <a className="bg-transparent hover:bg-gray-700 text-gray-300 hover:text-white px-3 py-1 rounded-lg transition">
                       {link.title}
                     </a>
