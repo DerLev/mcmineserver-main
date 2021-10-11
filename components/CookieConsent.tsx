@@ -1,8 +1,19 @@
-import { useState, Fragment } from 'react'
+import { useState, Fragment, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
 function CookieConsent() {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    const ccStorage = localStorage.getItem('cookiesAccepted');
+
+    if(ccStorage !== 'true') setIsOpen(true);
+  }, []);
+
+  const acceptCookies = () => {
+    setIsOpen(false);
+    localStorage.setItem('cookiesAccepted', 'true');
+  }
 
   return (
     <Transition
@@ -37,14 +48,14 @@ function CookieConsent() {
             <div className="relative bg-white rounded max-w-md mx-auto py-2 px-4">
               <Dialog.Title className="text-xl font-semibold">Cookies</Dialog.Title>
               <Dialog.Description className="font-light mb-4">
-                This website uses cookies.
+                A list of cookies, this website uses.
               </Dialog.Description>
 
               <p className="mb-5">
-                We only use cookies to prevent this banner from showing up.
+                We do not use any Cookies on this website.
               </p>
 
-              <button onClick={() => setIsOpen(false)} className="block py-1 px-3 w-full bg-gray-200 hover:bg-gray-300 focus:outline-none rounded shadow transition focus:ring">Ok</button>
+              <button onClick={() => acceptCookies()} className="block py-1 px-3 w-full bg-gray-200 hover:bg-gray-300 focus:outline-none rounded shadow transition focus:ring">Okay</button>
             </div>
           </Transition.Child>
         </div>
