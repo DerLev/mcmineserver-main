@@ -4,7 +4,7 @@ import PageHead from '../components/PageHead'
 import MinecraftWebp from '../assets/minecraft.webp'
 import { ServerIcon } from '@heroicons/react/outline'
 import fetch from 'node-fetch'
-import moment from 'moment'
+import moment from 'moment-timezone'
 
 const resolveMCStatus = (type: string) => {
   switch (type) {
@@ -143,7 +143,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       notification: notification,
       pings: pings,
       status: status.status,
-      fetchDate: moment().format('HH:mm')
-    }
+      fetchDate: moment().tz('Europe/Berlin').format('HH:mm')
+    },
+
+    revalidate: 60 * 30
   }
 }
