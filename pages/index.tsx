@@ -30,7 +30,7 @@ const Home: NextPage = () => {
                 className="w-full h-52 flex items-center justify-center group rounded-xl bg-gradient-to-tr from-green-700 to-green-300 shadow-lg"
                 onClick={(e) => clickFeature(e, '/minecraft')}
               >
-                <ServerIcon className="h-24 w-24 transform group-hover:scale-125 transition" />
+                <ServerIcon className="h-24 w-24 transform group-hover:scale-125 transition text-white" />
               </button>
             </div>
             <div style={{ gridArea: 'b' }} className="flex justify-center items-center">
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
                 className="w-full h-52 flex items-center justify-center group rounded-xl bg-gradient-to-tr from-discord to-indigo-300 shadow-lg"
                 onClick={(e) => clickFeature(e, '/discord')}
               >
-                <FontAwesomeIcon icon={faDiscord} className="h-24 w-24 text-7xl transform group-hover:scale-125 transition" />
+                <FontAwesomeIcon icon={faDiscord} className="h-24 w-24 text-7xl transform group-hover:scale-125 transition text-white" />
               </button>
             </div>
           </div>
