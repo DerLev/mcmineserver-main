@@ -2,7 +2,7 @@ import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 import PageHead from '../components/PageHead'
 import MinecraftWebp from '../assets/minecraft.webp'
-import { ServerIcon } from '@heroicons/react/outline'
+import { ServerIcon, StatusOnlineIcon } from '@heroicons/react/outline'
 import fetch from 'node-fetch'
 import moment from 'moment-timezone'
 
@@ -121,9 +121,10 @@ const Home: NextPage = ({ notification, pings, status, fetchDate }: InferGetStat
             href="https://mcmineserver.statuspage.io/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full py-3 px-5 border-2 text-center rounded-xl border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 transition"
+            className="flex justify-center items-center gap-1 w-full py-3 px-5 border-2 text-center rounded-xl border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 transition mb-4"
           >
-            Status page
+            <StatusOnlineIcon className="w-4 h-4" />
+            <span>Status page</span>
           </a>
         </div>
       </div>

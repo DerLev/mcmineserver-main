@@ -6,4 +6,7 @@ module.exports = {
     buildDate: new Date().toISOString(),
     rootUrl: 'https://mc-mineserver.de'
   },
+  images: {
+    domains: [ 'cdn.discordapp.com' ],
+  },
 }

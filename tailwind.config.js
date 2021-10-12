@@ -10,6 +10,7 @@ module.exports = {
         primary: '#526488',
         secondary: '#374a72',
         discord: '#5966f3',
+        discordNitro: '#ff73fa',
       },
       fontFamily: {
         display: ['Karla', 'sans-serif'],
