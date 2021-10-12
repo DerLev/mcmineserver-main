@@ -10,9 +10,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import moment from 'moment'
 import { MailIcon, ShieldCheckIcon, DocumentIcon } from '@heroicons/react/outline'
-import Head from 'next/head'
 import CookieConsent from '../components/CookieConsent'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 
 const NavLinks = [
   { title: 'Minecraft', href: '/minecraft' },
@@ -91,6 +91,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </footer>
       </div>
+      <Script src="https://tvg25fy65wdg.statuspage.io/embed/script.js"></Script>
     </>
   )
 }
