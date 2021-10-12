@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Link href="/">
               <a className="hover:bg-primary hover:bg-opacity-50 px-2 py-1 -mx-2 -my-1 rounded-lg transition">
                 <h1 className="text-2xl flex items-center gap-1">
-                  <Image src={LogoSvg} width={25} height={25} />
+                  <Image src={LogoSvg} width={25} height={25} alt="McMineserver Logo" />
                   <span className="hidden sm:block">McMineserver</span>
                 </h1>
               </a>
