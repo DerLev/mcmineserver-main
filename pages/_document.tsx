@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 class MyDocument extends Document {
   render() {
@@ -25,7 +26,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script src="https://tvg25fy65wdg.statuspage.io/embed/script.js"></script>
+          <Script src="https://tvg25fy65wdg.statuspage.io/embed/script.js"></Script>
         </body>
       </Html>
     )
