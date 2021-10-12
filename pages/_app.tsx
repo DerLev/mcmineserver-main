@@ -12,6 +12,7 @@ import moment from 'moment'
 import { MailIcon, ShieldCheckIcon, DocumentIcon } from '@heroicons/react/outline'
 import Head from 'next/head'
 import CookieConsent from '../components/CookieConsent'
+import { useRouter } from 'next/router'
 
 const NavLinks = [
   { title: 'Minecraft', href: '/minecraft' },
@@ -20,6 +21,8 @@ const NavLinks = [
 ]
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -40,7 +43,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileImage" content="/favicon/favicon-144.png" />
         <meta name="msapplication-TileColor" content="#121417" />
       </Head>
-      <DefaultSeo dangerouslySetAllPagesToNoIndex={ENV.stagingEnv} dangerouslySetAllPagesToNoFollow={ENV.stagingEnv} {...SEO} />
+      <DefaultSeo
+        dangerouslySetAllPagesToNoIndex={ENV.stagingEnv}
+        dangerouslySetAllPagesToNoFollow={ENV.stagingEnv}
+        {...SEO}
+        openGraph={{
+          url: process.env.rootUrl + router.route
+        }}
+      />
       <div className="flex flex-col items-stretch min-h-screen">
         <CookieConsent />
         {
