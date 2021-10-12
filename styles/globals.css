@@ -13,3 +13,31 @@ h1, h2, h3, h4 {
 .bg-img, .fg-text {
   grid-area: 1 / 1 / 2 / 2;
 }
+
+hr {
+  @apply mx-2 my-4 border-t-2 border-dotted border-gray-400 dark:border-gray-600;
+}
+
+table {
+  @apply w-full table-fixed text-center border-collapse bg-gray-200 dark:bg-gray-800;
+}
+
+table :is(td, th) {
+  @apply p-2;
+}
+
+table tr:nth-child(odd) {
+  @apply bg-gray-200 dark:bg-gray-800;
+}
+
+table tr:nth-child(even) {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+table tr {
+  @apply border-b border-gray-300 dark:border-gray-700;
+}
+
+table tr:last-child {
+  @apply border-b-0;
+}
