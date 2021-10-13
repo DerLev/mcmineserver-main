@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         gray: colors.gray,
         primary: '#526488',
+        primaryLight: '#697da5',
         secondary: '#374a72',
         discord: '#5966f3',
         discordNitro: '#ff73fa',

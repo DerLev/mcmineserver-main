@@ -5,8 +5,9 @@ import DiscordWebp from '../assets/discord.webp'
 import fetch from 'node-fetch'
 import Image from 'next/image'
 import { MailOpenIcon, ChevronDoubleDownIcon } from '@heroicons/react/outline'
-import { Disclosure, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Disclosure } from '@headlessui/react'
+import { Fragment, useEffect, useState } from 'react'
+import style from '../styles/discord.module.css'
 
 
 const isAnimated = (discord: any) => {
@@ -29,6 +30,14 @@ const nitroSvg = (level: number) => {
 }
 
 const Home: NextPage = ({ discord }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [rulesOpen, setRulesOpen] = useState(false);
+
+  useEffect(() => {
+    if(window.location.hash === '#rules') {
+      setRulesOpen(true);
+    }
+  }, [])
+
   return (
     <>
       <NextSeo
@@ -79,7 +88,7 @@ const Home: NextPage = ({ discord }: InferGetStaticPropsType<typeof getStaticPro
           </a>
         </div>
         
-        <Disclosure as="div">
+        <Disclosure as="div" id="rules" defaultOpen={rulesOpen}>
           {({ open }) => (
             <>
               <Disclosure.Button as={Fragment}>
@@ -89,8 +98,16 @@ const Home: NextPage = ({ discord }: InferGetStaticPropsType<typeof getStaticPro
                 </button>
               </Disclosure.Button>
 
-              <Disclosure.Panel as="div" className="bg-gray-200 dark:bg-gray-800 mx-2 rounded-b-lg py-1 px-2">
-                aaaa
+              <Disclosure.Panel as="div" className="bg-gray-200 dark:bg-gray-800 mx-2 rounded-b-lg py-1 px-4">
+                <h3 className="font-semibold text-xl text-center">Das Bevolgen dieser Regeln ist verbindlich und wird bei nicht beachten hart bestraft</h3>
+                <ul className={`${style.ul} mb-4`}>
+                  <li><b>KEIN</b> Spam</li>
+                  <li><b>KEINE</b> unangemessenen Nachrichten gegenüber anderen Mitgliedern</li>
+                  <li><b>KEINE</b> unangebrachten NSWF Links, Bilder, etc.</li>
+                  <li><b>KEINE</b> Werbung jeglicher Art</li>
+                  <li><b>KEIN</b> Earrape jeglicher Art im Chat oder Voice-Chat</li>
+                  <li><b>BEFOLGT</b> die <a href="https://discord.com/guidelines" target="_blank" rel="noopener noreferrer" className="link">Community-Richtlinien</a></li>
+                </ul>
               </Disclosure.Panel>
             </>
           )}

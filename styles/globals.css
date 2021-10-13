@@ -41,3 +41,7 @@ table tr {
 table tr:last-child {
   @apply border-b-0;
 }
+
+a.link {
+  @apply border-b-2 border-dotted border-primary -mb-2 hover:border-primaryLight transition;
+}
