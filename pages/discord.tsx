@@ -4,8 +4,8 @@ import PageHead from '../components/PageHead'
 import DiscordWebp from '../assets/discord.webp'
 import fetch from 'node-fetch'
 import Image from 'next/image'
-import { MailOpenIcon, ChevronDoubleDownIcon } from '@heroicons/react/outline'
-import { Disclosure } from '@headlessui/react'
+import { MailOpenIcon } from '@heroicons/react/outline'
+import { Tab } from '@headlessui/react'
 import { Fragment } from 'react'
 import style from '../styles/discord.module.css'
 
@@ -43,67 +43,77 @@ const Home: NextPage = ({ discord }: InferGetStaticPropsType<typeof getStaticPro
       />
       <div className="grid grid-cols-1 gap-4">
         <PageHead title="Discord" image={DiscordWebp} />
-        <div className="flex justify-center items-center">
-          <div className="flex">
-            <div className="h-28 w-28">
-              {
-                isAnimated(discord)
-                  ? <Image src={'https://cdn.discordapp.com/icons/' + discord.id + '/' + discord.icon + '.gif?size=512'} width={512} height={512} layout="responsive" alt={`Server icon of ${discord.name}`} />
-                  : <Image src={'https://cdn.discordapp.com/icons/' + discord.id + '/' + discord.icon + '.png?size=512'} width={512} height={512} layout="responsive" alt={`Server icon of ${discord.name}`} />   
-              }
+        <Tab.Group>
+          <Tab.List as="div" className="mb-4 mt-2">
+            <div className="w-max bg-gray-300 dark:bg-gray-800 p-1 rounded-lg flex gap-1">
+              <Tab as={Fragment}>
+                {({ selected }) => (
+                  <button className={`rounded-lg py-2 px-5 ${ selected ? 'bg-gray-400 dark:bg-gray-700' : 'hover:bg-gray-400 dark:hover:bg-gray-700 hover:bg-opacity-50' } transition`}>
+                    Invite
+                  </button>
+                )}
+              </Tab>
+              <Tab as={Fragment}>
+                {({ selected }) => (
+                  <button className={`rounded-lg py-2 px-5 ${ selected ? 'bg-gray-400 dark:bg-gray-700' : 'hover:bg-gray-400 dark:hover:bg-gray-700 hover:bg-opacity-50' } transition`}>
+                    Regeln
+                  </button>
+                )}
+              </Tab>
             </div>
-            <div className="flex flex-col justify-center font-medium">
-              <h2 className="flex items-center gap-2 text-2xl">
-                <span>{discord.name}</span>
-                { nitroSvg(discord.premium_tier) }
-              </h2>
-              <h3 className="text-lg flex items-center gap-2 font-medium">
-                <span className="w-4 h-4 bg-green-400 block rounded-full"></span>
-                <span>{discord.approximate_presence_count} User online</span>
-              </h3>
-            </div>
-          </div>
-        </div>
-        <div>
-          <p className="text-center">
-            Trete unserem Discord bei.<br />
-            Hier chatten wir, spielen gemainsam Spiele und genießen das Leben.
-          </p>
-        </div>
-        <div>
-          <a
-            href="https://discord.mc-mineserver.de/g/420989146853670912"
-            className="flex w-full py-3 px-5 border-2 justify-center items-center rounded-lg border-gray-500 hover:bg-gray-300 dark:hover:bg-gray-700 transition gap-1 my-4"
-          >
-            <MailOpenIcon className="w-4 h-4" />
-            <span>Beitreten</span>
-          </a>
-        </div>
-        
-        <Disclosure as="div" id="rules">
-          {({ open }) => (
-            <>
-              <Disclosure.Button as={Fragment}>
-                <button className="flex items-center w-full py-3 px-5 rounded-lg bg-gray-300 dark:bg-gray-700 gap-1">
-                  <ChevronDoubleDownIcon className={`w-4 h-4 transform ${ open ? 'rotate-180' : 'rotate-0' }`} />
-                  <span>Regeln</span>
-                </button>
-              </Disclosure.Button>
-
-              <Disclosure.Panel as="div" className="bg-gray-200 dark:bg-gray-800 mx-2 rounded-b-lg py-1 px-4">
-                <h3 className="font-semibold text-xl text-center">Das Bevolgen dieser Regeln ist verbindlich und wird bei nicht beachten hart bestraft</h3>
-                <ul className={`${style.ul} mb-4`}>
-                  <li><b>KEIN</b> Spam</li>
-                  <li><b>KEINE</b> unangemessenen Nachrichten gegenüber anderen Mitgliedern</li>
-                  <li><b>KEINE</b> unangebrachten NSWF Links, Bilder, etc.</li>
-                  <li><b>KEINE</b> Werbung jeglicher Art</li>
-                  <li><b>KEIN</b> Earrape jeglicher Art im Chat oder Voice-Chat</li>
-                  <li><b>BEFOLGT</b> die <a href="https://discord.com/guidelines" target="_blank" rel="noopener noreferrer" className="link">Community-Richtlinien</a></li>
-                </ul>
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
+          </Tab.List>
+          <Tab.Panels>
+            <Tab.Panel>
+              <div className="flex justify-center items-center">
+                <div className="flex">
+                  <div className="h-28 w-28">
+                    {
+                      isAnimated(discord)
+                        ? <Image src={'https://cdn.discordapp.com/icons/' + discord.id + '/' + discord.icon + '.gif?size=512'} width={512} height={512} layout="responsive" alt={`Server icon of ${discord.name}`} />
+                        : <Image src={'https://cdn.discordapp.com/icons/' + discord.id + '/' + discord.icon + '.png?size=512'} width={512} height={512} layout="responsive" alt={`Server icon of ${discord.name}`} />   
+                    }
+                  </div>
+                  <div className="flex flex-col justify-center font-medium">
+                    <h2 className="flex items-center gap-2 text-2xl">
+                      <span>{discord.name}</span>
+                      { nitroSvg(discord.premium_tier) }
+                    </h2>
+                    <h3 className="text-lg flex items-center gap-2 font-medium">
+                      <span className="w-4 h-4 bg-green-400 block rounded-full"></span>
+                      <span>{discord.approximate_presence_count} User online</span>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p className="text-center">
+                  Trete unserem Discord bei.<br />
+                  Hier chatten wir, spielen gemainsam Spiele und genießen das Leben.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="https://discord.mc-mineserver.de/g/420989146853670912"
+                  className="flex w-full py-3 px-5 border-2 justify-center items-center rounded-lg border-gray-500 hover:bg-gray-300 dark:hover:bg-gray-700 transition gap-1 my-4"
+                >
+                  <MailOpenIcon className="w-4 h-4" />
+                  <span>Beitreten</span>
+                </a>
+              </div>
+            </Tab.Panel>
+            <Tab.Panel>
+              <h3 className="font-semibold text-xl text-center">Das Bevolgen dieser Regeln ist verbindlich und wird bei nicht beachten hart bestraft</h3>
+              <ul className={`${style.ul} mb-4`}>
+                <li><b>KEIN</b> Spam</li>
+                <li><b>KEINE</b> unangemessenen Nachrichten gegenüber anderen Mitgliedern</li>
+                <li><b>KEINE</b> unangebrachten NSWF Links, Bilder, etc.</li>
+                <li><b>KEINE</b> Werbung jeglicher Art</li>
+                <li><b>KEIN</b> Earrape jeglicher Art im Chat oder Voice-Chat</li>
+                <li><b>BEFOLGT</b> die <a href="https://discord.com/guidelines" target="_blank" rel="noopener noreferrer" className="link">Community-Richtlinien</a></li>
+              </ul>
+            </Tab.Panel>
+          </Tab.Panels>
+        </Tab.Group>
       </div>
     </>
   )
