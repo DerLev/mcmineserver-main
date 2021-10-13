@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         dangerouslySetAllPagesToNoFollow={ENV.stagingEnv}
         {...SEO}
         openGraph={{
-          url: process.env.rootUrl + router.route
+          url: process.env.rootUrl + router.asPath
         }}
       />
       <div className="flex flex-col items-stretch min-h-screen">
