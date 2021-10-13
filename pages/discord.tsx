@@ -44,7 +44,7 @@ const Home: NextPage = ({ discord }: InferGetStaticPropsType<typeof getStaticPro
       <div className="grid grid-cols-1 gap-4">
         <PageHead title="Discord" image={DiscordWebp} />
         <Tab.Group>
-          <Tab.List as="div" className="mb-4 mt-2">
+          <Tab.List as="div" className="mb-4 mt-2 flex items-center justify-center md:justify-start">
             <div className="w-max bg-gray-300 dark:bg-gray-800 p-1 rounded-lg flex gap-1">
               <Tab as={Fragment}>
                 {({ selected }) => (
