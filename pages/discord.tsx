@@ -6,7 +6,7 @@ import fetch from 'node-fetch'
 import Image from 'next/image'
 import { MailOpenIcon, ChevronDoubleDownIcon } from '@heroicons/react/outline'
 import { Disclosure } from '@headlessui/react'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment } from 'react'
 import style from '../styles/discord.module.css'
 
 
@@ -30,14 +30,6 @@ const nitroSvg = (level: number) => {
 }
 
 const Home: NextPage = ({ discord }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const [rulesOpen, setRulesOpen] = useState(false);
-
-  useEffect(() => {
-    if(window.location.hash === '#rules') {
-      setRulesOpen(true);
-    }
-  }, [])
-
   return (
     <>
       <NextSeo
@@ -88,7 +80,7 @@ const Home: NextPage = ({ discord }: InferGetStaticPropsType<typeof getStaticPro
           </a>
         </div>
         
-        <Disclosure as="div" id="rules" defaultOpen={rulesOpen}>
+        <Disclosure as="div" id="rules">
           {({ open }) => (
             <>
               <Disclosure.Button as={Fragment}>
