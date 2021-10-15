@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           ENV.stagingEnv &&
           <StagingNote />
         }
-        <nav className="flex-grow-0 bg-gray-800 text-white flex justify-center items-center px-4 font-display">
+        <nav className="flex-grow-0 bg-gray-800 text-white flex justify-center items-center px-4 font-display" aria-hidden={true}>
           <div className="flex max-w-7xl w-full py-2 justify-between items-center">
             <Link href="/">
               <a className="hover:bg-primary hover:bg-opacity-50 px-2 py-1 -mx-2 -my-1 rounded-lg transition">
@@ -67,7 +67,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           </div>
         </main>
-        <footer className="flex-grow-0 flex justify-center items-center bg-gray-200 dark:bg-gray-800 text-gray-400 bg-opacity-50 font-display px-2">
+        <footer className="flex-grow-0 flex justify-center items-center bg-gray-200 dark:bg-gray-800 text-gray-400 bg-opacity-50 font-display px-2" aria-hidden={true}>
           <div className="flex max-w-7xl w-full sm:justify-between items-center flex-col sm:flex-row">
             <div>
               <span>&copy; { moment().format('yyyy') } McMineserver</span>

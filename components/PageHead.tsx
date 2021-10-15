@@ -9,7 +9,7 @@ interface pageHeadProps {
 
 function PageHead({ title, image, width, height }: pageHeadProps) {
   return (
-    <div className="grid rounded-3xl shadow-lg">
+    <div className="grid rounded-3xl shadow-lg" aria-hidden={true}>
       <div className="relative h-96 overflow-hidden rounded-3xl bg-img">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ width: '81rem' }}>
           <Image src={image} width={width || 1920} height={height || 1080} layout="responsive" alt={`${title} image`} />
