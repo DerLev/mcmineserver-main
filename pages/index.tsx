@@ -31,6 +31,7 @@ const Home: NextPage = () => {
                 onClick={(e) => clickFeature(e, '/minecraft')}
               >
                 <ServerIcon className="h-24 w-24 transform group-hover:scale-125 transition text-white" />
+                <span className="sr-only">Minecraft</span>
               </button>
             </div>
             <div style={{ gridArea: 'b' }} className="flex justify-center items-center">
@@ -54,6 +55,7 @@ const Home: NextPage = () => {
                 onClick={(e) => clickFeature(e, '/discord')}
               >
                 <FontAwesomeIcon icon={faDiscord} className="h-24 w-24 text-7xl transform group-hover:scale-125 transition text-white" />
+                <span className="sr-only">Discord</span>
               </button>
             </div>
           </div>
