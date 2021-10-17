@@ -1,8 +1,10 @@
-import { useState, Fragment, useEffect } from 'react'
+import { useState, Fragment, useEffect, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import Link from 'next/link'
 
 function CookieConsent() {
   const [isOpen, setIsOpen] = useState(false)
+  const okayButton = useRef(null)
 
   useEffect(() => {
     const ccStorage = localStorage.getItem('cookiesAccepted');
@@ -15,12 +17,16 @@ function CookieConsent() {
     localStorage.setItem('cookiesAccepted', 'true');
   }
 
+  const goToPrivacy = () => {
+    setIsOpen(false);
+  }
+
   return (
     <Transition
     show={isOpen}
     as={Fragment}
     >
-      <Dialog onClose={() => setIsOpen(false)} className="fixed z-10 inset-0 overflow-y-auto text-black">
+      <Dialog onClose={() => setIsOpen(false)} className="fixed z-10 inset-0 overflow-y-auto text-black" initialFocus={okayButton}>
         <div className="flex items-center justify-center min-h-screen">
 
           <Transition.Child
@@ -48,14 +54,19 @@ function CookieConsent() {
             <div className="relative bg-white rounded max-w-md mx-auto py-2 px-4">
               <Dialog.Title className="text-xl font-semibold">Cookies</Dialog.Title>
               <Dialog.Description className="font-light mb-4">
-                A list of cookies, this website uses.
+                Eine Liste an Cookies, die diese Webseite nutzt.
               </Dialog.Description>
 
               <p className="mb-5">
-                We do not use any Cookies on this website.
+                Diese Webseite benutzt keine Cookies.<br />
+                <Link href="/privacy">
+                  <a className="link" onClick={() => goToPrivacy()}>
+                    Mehr erfahren
+                  </a>
+                </Link>
               </p>
 
-              <button onClick={() => acceptCookies()} className="block py-1 px-3 w-full bg-gray-200 hover:bg-gray-300 focus:outline-none rounded shadow transition focus:ring">Okay</button>
+              <button onClick={() => acceptCookies()} ref={okayButton} className="block py-1 px-3 w-full bg-gray-200 hover:bg-gray-300 focus:outline-none rounded shadow transition focus:ring">Okay</button>
             </div>
           </Transition.Child>
         </div>
