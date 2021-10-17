@@ -1,0 +1,22 @@
+{
+  "titleTemplate": "%s – McMineserver",
+  "defaultTitle": "McMineserver",
+  "description": "Homepage of McMineserver",
+  "openGraph": {
+    "type": "website",
+    "locale": "en_US",
+    "url": "https://mc-mineserver.de/",
+    "site_name": "McMineserver",
+    "images": [
+      {
+        "url": "https://api.mc-mineserver.de/v3/files/dcec9e77fe7faa4eaf23f079419d2282.webp",
+        "width": 1920,
+        "height": 1080,
+        "alt": "Snowy Mountains"
+      }
+    ]
+  },
+  "twitter": {
+    "cardType": "summary_large_image"
+  }
+}

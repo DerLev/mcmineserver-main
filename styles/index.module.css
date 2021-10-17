@@ -1,0 +1,15 @@
+.featuresGrid {
+  grid-template:
+    "a b"
+    "c d" auto / 1fr 1fr;
+}
+
+@media screen and (max-width: 1024px) {
+  .featuresGrid {
+    grid-template:
+      "a" 208px
+      "b" 208px
+      "d" 208px
+      "c" 208px;
+  }
+}
