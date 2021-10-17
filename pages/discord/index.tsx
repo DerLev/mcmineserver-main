@@ -1,13 +1,13 @@
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
-import PageHead from '../components/PageHead'
-import DiscordWebp from '../assets/discord.webp'
+import PageHead from '../../components/PageHead'
+import DiscordWebp from '../../assets/discord.webp'
 import fetch from 'node-fetch'
 import Image from 'next/image'
 import { MailOpenIcon } from '@heroicons/react/outline'
 import { Tab } from '@headlessui/react'
 import { Fragment } from 'react'
-import style from '../styles/discord.module.css'
+import style from '../../styles/discord.module.css'
 
 
 const isAnimated = (discord: any) => {
