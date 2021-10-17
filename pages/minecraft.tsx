@@ -144,7 +144,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       notification: notification,
       pings: pings,
       status: status.status,
-      fetchDate: moment().tz('Europe/Berlin').format('HH:mm')
+      fetchDate: moment().tz('Europe/Berlin').format('HH:mm DD.MM.YY')
     },
 
     revalidate: 60 * 30
