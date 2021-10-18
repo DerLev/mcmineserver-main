@@ -4,7 +4,6 @@
   "description": "Homepage of McMineserver",
   "openGraph": {
     "type": "website",
-    "locale": "de_DE",
     "site_name": "McMineserver",
     "images": [
       {

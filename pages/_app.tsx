@@ -20,6 +20,11 @@ const NavLinks = [
   { title: 'Status', href: '/status' },
 ]
 
+const loc = (router:any) => {
+  if(router.pathname === '/discord/rules-en') return 'en_US'
+  return 'de_DE'
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
@@ -31,6 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         {...SEO}
         openGraph={{
           url: process.env.rootUrl + router.asPath,
+          locale: loc(router),
           ...SEO.openGraph
         }}
       />
