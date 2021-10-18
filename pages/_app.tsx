@@ -13,6 +13,9 @@ import { MailIcon, ShieldCheckIcon, DocumentIcon } from '@heroicons/react/outlin
 import CookieConsent from '../components/CookieConsent'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
+import { useEffect } from 'react'
+
+declare const window: any;
 
 const NavLinks = [
   { title: 'Minecraft', href: '/minecraft' },
@@ -27,6 +30,30 @@ const loc = (router:any) => {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'serviceWorker' in navigator && window.workbox !== undefined) {
+      const wb = window.workbox
+
+      const promptNewVersionAvailable = (event:any) => {
+        if (confirm('Eine neuere version der Webseite ist verfügbar. Update ???')) {
+          wb.addEventListener('controlling', (event:any) => {
+            window.location.reload()
+          })
+
+          wb.messageSkipWaiting()
+        } else {
+          console.log(
+            'User rejected to reload the web app, keep using old version. New version will be automatically load when user open the app next time.'
+          )
+        }
+      }
+
+      wb.addEventListener('waiting', promptNewVersionAvailable)
+
+      wb.register()
+    }
+  }, [])
 
   return (
     <>

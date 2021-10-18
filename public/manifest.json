@@ -3,6 +3,7 @@
   "short_name": "McMineserver",
   "description": "McMineserver PWA",
   "lang": "de-DE",
+  "dir": "ltr",
   "theme_color": "#27272A",
   "background_color": "#18181B",
   "display": "standalone",
