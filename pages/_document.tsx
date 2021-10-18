@@ -21,6 +21,9 @@ class MyDocument extends Document {
           <meta name="application-name" content="McMineserver" />
           <meta name="msapplication-TileImage" content="/favicon/favicon-144.png" />
           <meta name="msapplication-TileColor" content="#121417" />
+
+          <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#27272A" />
         </Head>
         <body>
           <Main />
