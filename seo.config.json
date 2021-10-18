@@ -4,8 +4,7 @@
   "description": "Homepage of McMineserver",
   "openGraph": {
     "type": "website",
-    "locale": "en_US",
-    "url": "https://mc-mineserver.de/",
+    "locale": "de_DE",
     "site_name": "McMineserver",
     "images": [
       {
