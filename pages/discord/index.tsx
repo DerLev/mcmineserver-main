@@ -106,7 +106,7 @@ const Home: NextPage = ({ discord }: InferGetStaticPropsType<typeof getStaticPro
               <ul className={`${style.ul} mb-4`}>
                 <li><b>KEIN</b> Spam</li>
                 <li><b>KEINE</b> unangemessenen Nachrichten gegenüber anderen Mitgliedern</li>
-                <li><b>KEINE</b> unangebrachten NSWF Links, Bilder, etc.</li>
+                <li><b>KEINE</b> unangebrachten NSFW Links, Bilder, etc.</li>
                 <li><b>KEINE</b> Werbung jeglicher Art</li>
                 <li><b>KEIN</b> Earrape jeglicher Art im Chat oder Voice-Chat</li>
                 <li><b>BEFOLGT</b> die <a href="https://discord.com/guidelines" target="_blank" rel="noopener noreferrer" className="link">Community-Richtlinien</a></li>
